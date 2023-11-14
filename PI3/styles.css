@@ -25,6 +25,7 @@ nav ul {
     list-style: none;
     display: flex;
     justify-content: center;
+    margin-top: 10px;
 }
 
 nav li {
@@ -37,16 +38,12 @@ nav a {
     font-weight: bold;
 }
 
-section.banner img {
-    width: 100%;
-    height: auto;
-}
-
 .catalog {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 20px;
     padding: 20px;
+    justify-content: center;
 }
 
 .movie {
@@ -65,30 +62,19 @@ section.banner img {
     text-align: center;
 }
 
-.section-title {
-    font-size: 24px;
-    margin: 20px 0;
-}
-
-.about h2 {
-    text-align: center;
-}
-
 .about p {
     margin-bottom: 20px;
     text-align: center;
-    margin-left: 10%;
-    margin-right: 10%;
+    max-width: 800px;
+    margin: 0 auto;
     font-size: larger;
-}
-
-.about ul {
-    text-align: center;
 }
 
 .about img {
     display: block;
-    margin: 0 auto; 
+    margin: 0 auto; /* centraliza a imagem */
+    max-width: 100%;
+    height: auto;
 }
 
 .social-links {
