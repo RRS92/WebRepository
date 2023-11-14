@@ -20,12 +20,14 @@ header {
 header h1 {
     font-size: 36px;
 }
+
 nav ul {
     list-style: none;
+    display: flex;
+    justify-content: center;
 }
 
 nav li {
-    display: inline;
     margin-right: 20px;
 }
 
@@ -42,8 +44,8 @@ section.banner img {
 
 .catalog {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); 
-    gap: 20px; 
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
     padding: 20px;
 }
 
@@ -55,13 +57,12 @@ section.banner img {
 }
 
 .movie img {
-    max-width: 450px;
-    max-height: 450px;
+    max-width: 100%;
+    height: auto;
 }
 
-.movie p{
+.movie p {
     text-align: center;
-    font-size: larger;
 }
 
 .section-title {
@@ -69,30 +70,31 @@ section.banner img {
     margin: 20px 0;
 }
 
-.about h2{
+.about h2 {
     text-align: center;
 }
 
 .about p {
     margin-bottom: 20px;
     text-align: center;
-    margin-left: 200px; 
-    margin-right: 200px; 
+    margin-left: 10%;
+    margin-right: 10%;
     font-size: larger;
-
 }
 
-.about ul{
+.about ul {
     text-align: center;
 }
 
-.about img{
-    text-align: center;
+.about img {
+    display: block;
+    margin: 0 auto; 
 }
 
 .social-links {
     list-style: none;
     padding: 0;
+    text-align: center;
 }
 
 .social-links li {
@@ -111,16 +113,4 @@ footer {
     padding: 10px 0;
     background-color: #333;
     color: white;
-}
-
-footer img{
-    max-width: 100px;
-    max-height: 100px;
-}
-
-.titulo{
-    text-align: center;
-    padding: 30px 0;
-    margin-left: 200px; 
-    margin-right: 200px; 
 }
