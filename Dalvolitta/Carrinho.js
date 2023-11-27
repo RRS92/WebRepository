@@ -5,7 +5,7 @@ function addItem(itemName, price) {
   const existingItem = cartItems.find(item => item.itemName === itemName);
 
   if (existingItem) {
-    existingItem.quantity = (existingItem.quantity || 1) + 1;
+    existingItem.quantity = (existingItem.quantity || 1);
   } else {
     cartItems.push({ itemName, price, quantity: 1 });
   }
