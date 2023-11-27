@@ -28,7 +28,7 @@ function updateCart() {
     const cartItem = document.createElement('div');
     cartItem.classList.add('cart-item');
     cartItem.innerHTML = `
-      <p>${item.itemName} - R$${item.price.toFixed(2)} x ${item.quantity}</p>
+      <p>${item.itemName} - R$${item.price.toFixed(2)}</p>
       <button onclick="removeItem('${item.itemName}')">Remover</button>
     `;
     cartContainer.appendChild(cartItem);
