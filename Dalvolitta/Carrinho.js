@@ -1,6 +1,15 @@
 let cartItems = [];
 let total = 0;
 
+// Recupera os itens do carrinho armazenados no localStorage ao carregar a página
+document.addEventListener('DOMContentLoaded', function () {
+  const storedCartItems = JSON.parse(localStorage.getItem('cartItems'));
+  if (storedCartItems) {
+    cartItems = storedCartItems;
+    updateCart();
+  }
+});
+
 function addItem(itemName, price) {
   const existingItem = cartItems.find(item => item.itemName === itemName);
 
@@ -10,12 +19,17 @@ function addItem(itemName, price) {
     cartItems.push({ itemName, price, quantity: 1 });
   }
 
+  // Atualiza os itens do carrinho e armazena no localStorage
   updateCart();
+  localStorage.setItem('cartItems', JSON.stringify(cartItems));
 }
 
 function removeItem(itemName) {
   cartItems = cartItems.filter(item => item.itemName !== itemName);
+
+  // Atualiza os itens do carrinho e armazena no localStorage
   updateCart();
+  localStorage.setItem('cartItems', JSON.stringify(cartItems));
 }
 
 function updateCart() {
