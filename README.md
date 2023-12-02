@@ -1,7 +1,6 @@
 # MyRepositoryWeb
 
-Reposotorio das aulas de WEB
-Links para os sites:
+Reposotorio das aulas de WEB - Links para os sites:
 
 https://rrs92.github.io/MyRepository/portfolio/index.html
 
