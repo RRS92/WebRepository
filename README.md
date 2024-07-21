@@ -1,4 +1,4 @@
-# MyRepositoryWeb
+# MyWebRepository
 
 Reposotorio das aulas de WEB - Links para os sites:
 
