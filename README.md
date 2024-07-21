@@ -2,12 +2,12 @@
 
 Reposotorio das aulas de WEB - Links para os sites:
 
-https://rrs92.github.io/WebRepository/portfolio/index.html
+Portfolio: https://rrs92.github.io/WebRepository/portfolio/index.html
 
-https://rrs92.github.io/WebRepository/MyFakeFlix/Home.html
+Fakeflix: https://rrs92.github.io/WebRepository/MyFakeFlix/Home.html
 
-https://rrs92.github.io/WebRepository/Dalvolitta/home.html
+Dalvolitta: https://rrs92.github.io/WebRepository/Dalvolitta/home.html
 
-https://rrs92.github.io/WebRepository/PI3/catalogo.html
+Site de jogos: https://rrs92.github.io/WebRepository/PI3/catalogo.html
 
-https://rrs92.github.io/WebRepository/Tailwind/index.html
+Tailwind: https://rrs92.github.io/WebRepository/Tailwind/index.html
