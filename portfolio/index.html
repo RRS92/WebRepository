@@ -4,47 +4,76 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfólio Profissional</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
 </head>
 <body>
-    <div> 
-        <h1> Rebson Ramalho dos Santos </h1> 
-        <h2> Programador em construção </h2>
+    <div class="container">
+        <header class="text-center my-4">
+            <h1>Rebson Ramalho dos Santos</h1>
+            <h2>Programador em construção</h2>
+        </header>
+        
+        <section id="about" class="my-4">
+            <h2 class="text-center">Sobre Mim</h2>
+            <div class="row">
+                <div class="col-md-4 text-center">
+                    <img src="image.jpg" alt="Image Not Found" class="img-fluid rounded-circle">
+                </div>
+                <div class="col-md-8">
+                    <p>Atualmente, estou cursando Análise e Desenvolvimento de Sistemas no IFPE Campus Palmares, onde já concluí o curso Técnico em Redes de Computadores. Tenho uma forte paixão pela área de TI, com especial interesse em redes de computadores, DevOps e programação. Durante minha formação, adquiri uma sólida base teórica e prática em programação, administração de sistemas e segurança de redes.
+
+                        Meu objetivo é me especializar em redes de computadores ou DevOps, aplicando meus conhecimentos técnicos para resolver problemas complexos e contribuir para projetos inovadores. Além disso, estou disposto a trabalhar na área de programação, onde posso desenvolver soluções eficientes e criativas. Estou sempre em busca de oportunidades para crescer profissionalmente e colaborar em iniciativas desafiadoras.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="my-4">
+            <h2 class="text-center">Habilidades</h2>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">Python Intermediário</li>
+                <li class="list-group-item">Java Intermediário</li>
+                <li class="list-group-item">Criação e gerenciamento de redes</li>
+            </ul>
+        </section>
+
+        <section id="projects" class="my-4">
+            <h2 class="text-center">Projetos</h2>
+            <div class="card mb-3">
+                <div class="card-body">
+                    <h4 class="card-title">Projeto 01</h4>
+                    <p class="card-text">Código da cifra de César, um sistema simples de substituição, no qual cada letra da mensagem original era trocada pela letra que se situa posições à sua frente (depedendo do valor da chave):</p>
+                    <a href="https://colab.research.google.com/drive/15p0DCnCPP_0sULM95zC6OP55SeW-w_N9?usp=sharing" class="btn btn-primary">Detalhes do Projeto</a>
+                </div>
+            </div>
+            <div class="card mb-3">
+                <div class="card-body">
+                    <h4 class="card-title">Projeto 02</h4>
+                    <p class="card-text">Código de Esteganografia, que é a prática de ocultar informações dentro de outra mensagem ou objeto físico para evitar a detecção. Nesse projeto uma imagem é escondida em outra:</p>
+                    <a href="https://colab.research.google.com/drive/1A6uJhjwlAq_pOIuV-lCqMkm1zBP-uQpj?usp=sharing" class="btn btn-primary">Detalhes do Projeto</a>
+                </div>
+            </div>
+            <div class="card mb-3">
+                <div class="card-body">
+                    <h4 class="card-title">Projeto 03</h4>
+                    <p class="card-text">Projeto de desenvolvimento web, criação de um projeto, Dalvolitta, para a demonstração de habilidades com html, css e javascript:</p>
+                    <a href="https://rrs92.github.io/WebRepository/Dalvolitta/home.html" class="btn btn-primary">Página do projeto</a>
+                </div>
+            </div>
+        </section>
+
+        <footer class="text-center my-4">
+            <h3>Contatos</h3>
+            <p>Email: rrs17@discente.ifpe.edu.br</p>
+            <p>GitHub: <a href="https://github.com/RRS92" target="_blank">GitHub</a></p>
+            <p>LinkedIn: <a href="https://www.linkedin.com/in/rebson-ramalho-bba023266/" target="_blank">LinkedIn</a></p>
+        </footer>
     </div>
     
-    <div> 
-        <h2> Sobre Mim </h2>
-        <img src="https://i.imgur.com/K4PFVFU.jpg" alt="Image Not Found">
-        <p> Estou no momento cursando Análise e Desenvolvimento de Sistemas pelo IFPE campus Palmares, onde já conclui o curso Técnico em Redes de Comutadores. Pretendo seguir na área TI, focando mais na área de redes de computadores ou DevOps. </p>
-    </div>
-
-    <div> 
-        <h2> Habilidades </h2>
-        <ul>
-            <li> Python Intermediário;</li>
-            <li> Java Intermediário;</li>
-            <li> Criação e gerenciamento de redes.</li>
-        </ul>
-    </div>
-
-    <div> 
-        <h2>Projetos</h2>
-        <h4> Projeto 01</h4>
-        <p> Código da cifra de César, um sistema simples de substituição, no qual cada letra da mensagem original era trocada pela letra que se situa posições à sua frente (depedendo do valor da chave): </p>
-        <a href="https://colab.research.google.com/drive/15p0DCnCPP_0sULM95zC6OP55SeW-w_N9?usp=sharing">Detalhes do Projeto</a>
-        <h4>Projeto 02</h4>
-        <p> Código de Esteganografia, que é a prática de ocultar informações dentro de outra mensagem ou objeto físico para evitar a detecção. Nesse projeto uma imagem é escondida em outra: </p>
-        <a href="https://colab.research.google.com/drive/1A6uJhjwlAq_pOIuV-lCqMkm1zBP-uQpj?usp=sharing">Detalhes do Projeto</a>
-    </div>
-
-    <footer>
-        <div>
-        <h3>Contatos:</h3>
-        <p>Email: rrs17@discente.ifpe.edu.br </p>
-        <p>GitHub: <a href="https://github.com/RRS92">GitHub</a></p>
-        <p>Linkedin: <a href="https://www.linkedin.com/in/rebson-ramalho-bba023266/">Linkedin</a></p>
-        </div>
-    </footer>
-    
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
