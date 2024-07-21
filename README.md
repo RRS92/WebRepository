@@ -9,3 +9,5 @@ https://rrs92.github.io/MyRepository/MyFakeFlix/Home.html
 https://rrs92.github.io/MyRepository/Dalvolitta/home.html
 
 https://rrs92.github.io/MyRepository/PI3/catalogo.html
+
+https://rrs92.github.io/MyRepository/Tailwind/index.html
