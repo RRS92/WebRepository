@@ -1,0 +1,142 @@
+/* Estilos gerais */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #FFFFFF; /* Cor de fundo branca para o conteúdo das páginas */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Estilo da faixa superior verde */
+.header {
+    background-color: #007F00; /* Cor verde para o cabeçalho */
+    width: 100%;
+    padding: 30px;
+    text-align: center;
+    color: #FFFFFF;
+    
+}
+
+/* Estilos para containers principais */
+.container {
+    background-color: white; /* Cor branca para o conteúdo das páginas */
+    padding: 60px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 800px; /* Ajuste a largura máxima conforme necessário */
+}
+
+/* Estilo para botões e links */
+.btn {
+    background-color: #007F00; /* Cor verde para botões */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+    text-align: center;
+}
+
+.btn:hover {
+    background-color: #005700; /* Cor verde mais escura ao passar o mouse */
+}
+
+/* Estilos específicos para formulário */
+form input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Estilo para cabeçalhos */
+h1, h2 {
+    color: #007F00; /* Cor verde para cabeçalhos */
+    margin-bottom: 20px;
+}
+
+/* Estilo para seções de opções */
+.options {
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+    margin-bottom: 20px;
+}
+
+.options a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+.options div {
+    text-align: center;
+}
+
+.options img {
+    width: 100px;
+    height: 100px;
+}
+
+/* Estilos para menus */
+.menu a {
+    background-color: white;
+    color: black;
+    padding: 15px;
+    text-decoration: none;
+    text-align: center;
+    margin-bottom: 10px;
+    border: 1px solid black;
+    border-radius: 5px;
+    display: block;
+}
+
+.menu a:hover {
+    background-color: #e6e6e6;
+}
+
+/* Estilo para link de logout */
+.logout a {
+    color: purple;
+    text-decoration: none;
+}
+
+.logout a:hover {
+    text-decoration: underline;
+}
+
+/* Estilos específicos para a página de confirmação */
+.confirmacao-container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.confirmacao-container h1 {
+    color: #007F00; /* Verde para cabeçalhos */
+}
+
+.confirmacao-container p {
+    margin: 10px 0;
+}
+
+/* Estilo para os campos de entrada no login */
+input[type="email"], 
+input[type="password"] {
+    width: calc(100% - 20px); /* Ajusta a largura para preencher quase todo o contêiner */
+    padding: 15px; /* Aumenta o padding interno */
+    margin: 10px 0; /* Espaço vertical entre os campos */
+    border: 1px solid #ccc; /* Borda padrão */
+    border-radius: 5px; /* Cantos arredondados */
+    box-sizing: border-box; /* Inclui padding e borda na largura total */
+    font-size: 16px; /* Aumenta o tamanho da fonte para melhor legibilidade */
+}
