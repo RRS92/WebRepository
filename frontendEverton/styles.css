@@ -209,24 +209,24 @@ body {
     margin-top: 20px;
 }
 
-/* Painel do Usuário */
-.dashboard {
+/* Tela Inicial do Usuário */
+.tela-inicial {
     width: 90%;
     max-width: 800px;
     margin: 50px auto;
     text-align: center;
 }
 
-.dashboard h2 {
+.tela-inicial h2 {
     margin-bottom: 20px;
     font-size: 2em;
 }
 
-.dashboard .btn-container {
+.tela-inicial .btn-container {
     margin-top: 30px;
 }
 
-.dashboard .btn {
+.tela-inicial .btn {
     display: inline-block;
     margin: 10px;
     padding: 15px 30px;
@@ -237,49 +237,76 @@ body {
     font-weight: bold;
 }
 
-.dashboard .btn:hover {
+.tela-inicial .btn:hover {
     background-color: var(--accent-color);
 }
 
-/* Eventos */
-.eventos {
-    width: 90%;
-    max-width: 800px;
-    margin: 50px auto;
+/* Estilos para a seção de eventos */
+.events-section {
+    padding: 40px 20px;
+    background-color: #f8f9fa; /* Cor de fundo suave para diferenciar a seção */
 }
 
-.eventos h2 {
-    margin-bottom: 20px;
-    font-size: 2em;
+.events-section h2 {
     text-align: center;
+    font-size: 2em;
+    color: #006400;
+    margin-bottom: 30px;
 }
 
-.eventos ul {
-    list-style: none;
-}
-
-.eventos ul li {
-    background-color: var(--white-color);
-    padding: 15px;
-    margin-bottom: 10px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+.events-container {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center; /* Alinha os cards no centro da página */
+    gap: 20px;
 }
 
-.eventos ul li .btn {
-    background-color: var(--primary-color);
-    color: var(--white-color);
-    padding: 5px 15px;
+.event-card {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    text-align: left; /* Alinha o texto à esquerda no card */
+    width: 300px; /* Define uma largura fixa para os cards */
+}
+
+.event-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.event-card h3 {
+    font-size: 1.5em;
+    color: #004d00;
+    margin-bottom: 10px;
+}
+
+.event-description {
+    font-size: 1em;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.event-details p {
+    font-size: 0.9em;
+    color: #333;
+    margin: 5px 0;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #006400;
+    color: #ffffff;
     text-decoration: none;
     border-radius: 5px;
     font-weight: bold;
+    transition: background-color 0.2s ease-in-out;
 }
 
-.eventos ul li .btn:hover {
-    background-color: var(--accent-color);
+.btn:hover {
+    background-color: #004d00; /* Tom mais escuro para o hover */
 }
 
 /* Rodapé */
@@ -466,4 +493,66 @@ footer .footer-column {
 
 .login-page a:hover {
     text-decoration: underline;
+}
+
+/* Perfil */
+.profile {
+    background-color: var(--white-color);
+    padding: 50px 20px;
+    margin: 20px auto;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 800px;
+}
+
+.profile h2 {
+    font-size: 2em;
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.profile-info {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 20px;
+}
+
+.profile-picture {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.profile-details {
+    flex: 1;
+    font-size: 1.1em;
+}
+
+.profile-details p {
+    margin-bottom: 10px;
+}
+
+.profile-actions {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.profile-actions .btn {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    margin: 5px;
+    display: inline-block;
+}
+
+.profile-actions .btn:hover {
+    background-color: var(--accent-color);
 }

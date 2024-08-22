@@ -7,8 +7,3 @@ document.querySelector('form').addEventListener('submit', function(event) {
         alert('As senhas não coincidem!');
     }
 });
-
-function showSection(type) {
-    document.getElementById('aluno-info').style.display = type === 'aluno' ? 'block' : 'none';
-    document.getElementById('servidor-info').style.display = type === 'servidor' ? 'block' : 'none';
-}
