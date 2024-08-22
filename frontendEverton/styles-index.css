@@ -24,7 +24,7 @@ body {
 }
 
 .landing-page {
-    background-image: url('images/ifpe1.jpg'); /* Substitua pelo caminho correto da imagem */
+    background-image: url('images/teste.png'); /* Substitua pelo caminho correto da imagem */
     background-size: cover; /* Faz a imagem cobrir todo o fundo */
     background-position: center; /* Centraliza a imagem no fundo */
     background-repeat: no-repeat; /* Evita que a imagem se repita */
@@ -53,11 +53,6 @@ body {
     text-decoration: none;
     margin-left: 20px;
     font-weight: bold;
-    text-shadow: 
-        -1px -1px 0 black,   /* Sombra no canto superior esquerdo */
-        1px -1px 0 black,    /* Sombra no canto superior direito */
-        -1px 1px 0 black,    /* Sombra no canto inferior esquerdo */
-        1px 1px 0 black;     /* Sombra no canto inferior direito */
 }
 
 .main-header nav a:hover {
@@ -77,30 +72,17 @@ body {
 }
 
 .hero h1 {
-    font-size: 3.0em;
+    font-size: 2.5em;
     margin-bottom: 20px;
-    color: var(--white-color);
-    text-shadow: 
-        -1px -1px 0 black,   /* Sombra no canto superior esquerdo */
-        1px -1px 0 black,    /* Sombra no canto superior direito */
-        -1px 1px 0 black,    /* Sombra no canto inferior esquerdo */
-        1px 1px 0 black;     /* Sombra no canto inferior direito */
 }
-
-
 
 .hero .btn {
     background-color: var(--accent-color);
     color: var(--white-color);
-    padding: 15px 25px;
+    padding: 10px 20px;
     text-decoration: none;
     border-radius: 5px;
     font-weight: bold;
-    text-shadow: 
-        -1px -1px 0 black,   /* Sombra no canto superior esquerdo */
-        1px -1px 0 black,    /* Sombra no canto superior direito */
-        -1px 1px 0 black,    /* Sombra no canto inferior esquerdo */
-        1px 1px 0 black;     /* Sombra no canto inferior direito */
 }
 
 .hero .btn:hover {
@@ -113,11 +95,6 @@ footer {
     text-align: center;
     padding: 20px 0;
     margin-top: auto; /* Garante que o rodapé fique no final da página */
-    text-shadow: 
-        -1px -1px 0 black,   /* Sombra no canto superior esquerdo */
-        1px -1px 0 black,    /* Sombra no canto superior direito */
-        -1px 1px 0 black,    /* Sombra no canto inferior esquerdo */
-        1px 1px 0 black;     /* Sombra no canto inferior direito */
 }
 
 footer .container {

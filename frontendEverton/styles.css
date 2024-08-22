@@ -18,6 +18,7 @@
 /* Corpo */
 body {
     font-family: 'Arial', sans-serif;
+    background-color: #DCDCDC;
     color: var(--dark-color);
     display: flex;
     flex-direction: column;
