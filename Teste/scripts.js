@@ -85,16 +85,53 @@ document.addEventListener('DOMContentLoaded', function() {
         })
         .then(response => {
             if (!response.ok) {
-                throw new Error('Erro ao cadastrar aluno: ' + response.statusText);
+                throw new Error('Erro ao cadastrar alunos: ' + response.statusText);
             }
             return response.json();
         })
         .then(data => {
-            alert('aluno cadastrado com sucesso!');
+            alert('alunos cadastrado com sucesso!');
             console.log('Success:', data);
         })
         .catch(error => {
-            console.error('Erro ao cadastrar aluno:', error);
+            console.error('Erro ao cadastrar alunos:', error);
         });
     });
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Adiciona o evento ao botão para buscar alunos
+    document.getElementById('btn-fetch-alunos').addEventListener('click', function() {
+        fetchAlunos();
+    });
+
+    // Função para buscar e exibir os alunos
+    function fetchAlunos() {
+        fetch('http://localhost:8080/alunos')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Erro ao buscar alunos: ' + response.statusText);
+                }
+                return response.json();
+            })
+            .then(data => {
+                console.log('Aluno:', data);
+                displayAlunos(data);
+            })
+            .catch(error => {
+                console.error('Erro ao buscar alunos:', error);
+            });
+    }
+
+    // Função para exibir alunos na página
+    function displayAlunos(alunos) {
+        const alunoList = document.getElementById('aluno-list');
+        alunoList.innerHTML = '';
+
+        alunos.forEach(aluno => {
+            const listItem = document.createElement('li');
+            listItem.textContent = `Nome: ${aluno.nome}, CPF: ${aluno.cpf}, RG: ${aluno.RG}, Data de Nascimento: ${aluno.dataNascimento}, Telefone: ${aluno.telefone}, Email: ${aluno.email}`;
+            alunoList.appendChild(listItem);
+        });
+    }
 });
