@@ -53,6 +53,11 @@ body {
     text-decoration: none;
     margin-left: 20px;
     font-weight: bold;
+    text-shadow: 
+        -1px -1px 0 black,   /* Sombra no canto superior esquerdo */
+        1px -1px 0 black,    /* Sombra no canto superior direito */
+        -1px 1px 0 black,    /* Sombra no canto inferior esquerdo */
+        1px 1px 0 black;     /* Sombra no canto inferior direito */
 }
 
 .main-header nav a:hover {
@@ -74,6 +79,11 @@ body {
 .hero h1 {
     font-size: 2.5em;
     margin-bottom: 20px;
+    text-shadow: 
+        -1px -1px 0 black,   /* Sombra no canto superior esquerdo */
+        1px -1px 0 black,    /* Sombra no canto superior direito */
+        -1px 1px 0 black,    /* Sombra no canto inferior esquerdo */
+        1px 1px 0 black;     /* Sombra no canto inferior direito */
 }
 
 .hero .btn {
@@ -95,6 +105,11 @@ footer {
     text-align: center;
     padding: 20px 0;
     margin-top: auto; /* Garante que o rodapé fique no final da página */
+    text-shadow: 
+        -1px -1px 0 black,   /* Sombra no canto superior esquerdo */
+        1px -1px 0 black,    /* Sombra no canto superior direito */
+        -1px 1px 0 black,    /* Sombra no canto inferior esquerdo */
+        1px 1px 0 black;     /* Sombra no canto inferior direito */
 }
 
 footer .container {
