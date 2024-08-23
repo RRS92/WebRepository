@@ -205,7 +205,7 @@ body {
     background-color: var(--accent-color);
 }
 
-/* Estilos para a seção de eventos */
+/* Estilos para a seção de eventos e lista de alunos */
 .events-section {
     padding: 40px 20px;
     background-color: #f8f9fa; /* Cor de fundo suave para diferenciar a seção */
