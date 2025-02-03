@@ -12,4 +12,4 @@ Site de jogos: https://rrs92.github.io/WebRepository/PI3/catalogo.html
 
 Gerador de Citações Inspiradoras: https://rrs92.github.io/WebRepository/atv1/index.html
 
-Tailwind: https://rrs92.github.io/WebRepository/Tailwind/index.html
+Atividade Tailwind: https://rrs92.github.io/WebRepository/Tailwind/index.html
