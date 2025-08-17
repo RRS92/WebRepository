@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<title>Todos os Pacientes</title>
+<link rel="stylesheet" href="style.css" />
+<style>
+    /* Deixa a tabela mais larga e responsiva */
+    table {
+        width: 100% !important;
+        min-width: 1100px;
+    }
+
+    /* Container que ocupa toda largura com padding */
+.container, .form-container {
+  width: 100vw;
+  max-width: 100vw;
+  padding: 10px 20px;
+  box-sizing: border-box;
+}
+
+/* Container da tabela para não usar scroll horizontal */
+.table-container {
+  overflow-x: visible !important;
+}
+
+/* Tabela ocupa 100% largura, colunas divididas igualmente */
+table {
+  width: 100% !important;
+  table-layout: fixed;
+  border-collapse: collapse;
+}
+
+/* Quebra o texto se for muito longo */
+table th, table td {
+  padding: 8px 6px;
+  word-wrap: break-word;
+  white-space: normal;
+  text-align: center;
+  border: 1px solid #ddd;
+  font-size: 0.9rem;
+}
+
+/* Cabeçalho com fundo e cor */
+thead tr {
+  background-color: #0077b6;
+  color: white;
+}
+
+/* Ajuste para botões nas células para não quebrar layout */
+table button {
+  padding: 5px 8px;
+  font-size: 0.85rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Responsividade para telas pequenas */
+@media (max-width: 700px) {
+  table th, table td {
+    font-size: 0.8rem;
+    padding: 6px 4px;
+  }
+  button {
+    padding: 4px 6px;
+    font-size: 0.75rem;
+  }
+}
+</style>
+</head>
+<body>
+    <div class="container">
+        <h2>Todos os Pacientes</h2>
+        <div class="table-container">
+            <table id="pacienteTable">
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>CPF</th>
+                        <th>Pré-Hematócrito</th>
+                        <th>Pré-Hemoglobina</th>
+                        <th>Pré-Lactato</th>
+                        <th>Altura (m)</th>
+                        <th>CPB (min)</th>
+                        <th>Anóxia (min)</th>
+                        <th>Reoperação</th>
+                        <th>Sexo</th>
+                        <th>Paciente Febril</th>
+                        <th>Probabilidade (%)</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+        <button onclick="window.location.href='list_options.html'">Voltar</button>
+    </div>
+
+    <script>
+    function mascararCPF(cpf) {
+        if (!cpf || cpf.length < 5) return cpf;
+        const inicio = cpf.slice(0, 3);
+        const fim = cpf.slice(-2);
+        const estrelas = '*'.repeat(cpf.length - 5);
+        return inicio + estrelas + fim;
+    }
+
+    function mascararNome(nome) {
+        if (!nome) return nome;
+        const partes = nome.trim().split(" ");
+        if (partes.length <= 2) {
+            // Se tiver só primeiro e último, não precisa mascarar
+            return nome;
+        }
+        const primeiro = partes[0];
+        const ultimo = partes[partes.length - 1];
+        return primeiro + " ***** " + ultimo;
+    }
+
+    async function carregarPacientes() {
+        const res = await fetch('http://127.0.0.1:5000/paciente/getallpacientes');
+        if (!res.ok) {
+            alert('Erro ao buscar pacientes');
+            return;
+        }
+        const data = await res.json();
+        const pacientes = data.pacientes;
+
+        const tbody = document.querySelector('#pacienteTable tbody');
+        tbody.innerHTML = '';
+
+        pacientes.forEach(p => {
+            const tr = document.createElement('tr');
+            tr.innerHTML = `
+                <td>${mascararNome(p.nome)}</td>
+                <td>${mascararCPF(p.cpf)}</td>
+                <td>${p.pre_hematocrit}</td>
+                <td>${p.pre_hemoglobin}</td>
+                <td>${p.pre_lactate}</td>
+                <td>${p.height}</td>
+                <td>${p.cpb}</td>
+                <td>${p.anoxia}</td>
+                <td>${p.redo == 1 ? 'Sim' : 'Não'}</td>
+                <td>${p.female == 1 ? 'Feminino' : 'Masculino'}</td>
+                <td>${p.normothermia == 1 ? 'Não' : 'Sim'}</td>
+                <td>${parseFloat(p.probability).toFixed(4)}</td>
+                <td>
+                    <button onclick="deletarPaciente('${p.cpf}')">Deletar</button>
+                    <button onclick="editarPaciente('${p.cpf}')">Editar</button>
+                </td>
+            `;
+            tbody.appendChild(tr);
+        });
+    }
+
+    async function deletarPaciente(cpf) {
+        if (!confirm('Confirma a exclusão deste paciente?')) return;
+
+        const res = await fetch(`http://127.0.0.1:5000/paciente/delete/${cpf}`, {
+            method: 'DELETE'
+        });
+        if (res.ok) {
+            alert('Paciente deletado');
+            carregarPacientes();
+        } else {
+            alert('Erro ao deletar paciente');
+        }
+    }
+
+    function editarPaciente(cpf) {
+    // Armazena o CPF no sessionStorage
+    sessionStorage.setItem('cpf_to_edit', cpf);
+    // Redireciona para a página de atualização sem CPF na URL
+    window.location.href = 'update_patient.html';
+}
+
+
+    carregarPacientes();
+</script>
+
+</body>
+</html>
