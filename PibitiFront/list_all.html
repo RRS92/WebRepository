@@ -120,7 +120,7 @@ table button {
     }
 
     async function carregarPacientes() {
-        const res = await fetch('${API_BASE_URL}/paciente/getallpacientes');
+        const res = await fetch(`${API_BASE_URL}/paciente/getallpacientes`);
         if (!res.ok) {
             alert('Erro ao buscar pacientes');
             return;

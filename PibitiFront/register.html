@@ -23,7 +23,7 @@
             const matricula = document.getElementById('registerMatricula').value;
             const password = document.getElementById('registerPassword').value;
 
-            const res = await fetch('${API_BASE_URL}/user/create', {
+            const res = await fetch(`${API_BASE_URL}/user/create`, {
                 method: 'POST',
                 headers: {'Content-Type': 'application/json'},
                 body: JSON.stringify({ userName, matricula, password })

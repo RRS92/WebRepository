@@ -92,7 +92,7 @@
         const female = parseInt(femaleRadio.value);
         const normothermia = parseInt(normothermiaRadio.value);
 
-        const res = await fetch('${API_BASE_URL}/paciente', {
+        const res = await fetch(`${API_BASE_URL}/paciente`, {
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({ 
