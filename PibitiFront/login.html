@@ -14,7 +14,9 @@
         <p>Não possui cadastro? <a href="register.html">Registrar-se</a></p>
     </div>
 
-<script>
+<script type="module">
+    import { API_BASE_URL } from './config.js';
+
     async function login() {
         const matricula = document.getElementById('loginMatricula').value.trim();
         const password = document.getElementById('loginPassword').value;
@@ -25,7 +27,7 @@
         }
 
         try {
-            const res = await fetch('http://127.0.0.1:5000/user/auth', {
+            const res = await fetch('${API_BASE_URL}/user/auth', {
                 method: 'POST',
                 headers: {'Content-Type': 'application/json'},
                 body: JSON.stringify({ matricula, password })

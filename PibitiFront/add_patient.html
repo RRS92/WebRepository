@@ -50,7 +50,9 @@
     <button class="btn-voltar" onclick="window.location.href='home.html'">Voltar</button>
 </div>
 
-<script>
+<script type="module">
+    import { API_BASE_URL } from './config.js';
+
     function validarAviso(valor, min, max, nomeCampo) {
         if (valor < min || valor > max) {
             alert(`Atenção: o valor de ${nomeCampo} está fora da faixa usual (${min} – ${max}). Valores muito discrepantes podem alterar os resultados finais.`);
@@ -90,7 +92,7 @@
         const female = parseInt(femaleRadio.value);
         const normothermia = parseInt(normothermiaRadio.value);
 
-        const res = await fetch('http://127.0.0.1:5000/paciente', {
+        const res = await fetch('${API_BASE_URL}/paciente', {
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({ 

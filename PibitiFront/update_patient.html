@@ -37,7 +37,9 @@
         <button onclick="window.location.href='list_options.html'">Cancelar</button>
     </div>
 
-<script>
+<script type="module">
+    import { API_BASE_URL } from './config.js';
+
 async function carregarPaciente() {
     // Pega o CPF do sessionStorage em vez da URL
     const cpf = sessionStorage.getItem('cpf_to_edit');
@@ -47,7 +49,7 @@ async function carregarPaciente() {
         return;
     }
 
-    const res = await fetch(`http://127.0.0.1:5000/paciente/${cpf}`);
+    const res = await fetch(`${API_BASE_URL}/paciente/${cpf}`);
     if (!res.ok) {
         alert('Paciente não encontrado');
         window.location.href = 'list_options.html';
@@ -98,7 +100,7 @@ async function updatePatient() {
     };
 
     try {
-        const res = await fetch(`http://127.0.0.1:5000/paciente/update/${originalCpf}`, {
+        const res = await fetch(`${API_BASE_URL}/paciente/update/${originalCpf}`, {
             method: 'PUT',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify(payload)

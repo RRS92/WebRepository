@@ -15,13 +15,15 @@
         <p>Já tem conta? <a href="login.html">Entrar</a></p>
     </div>
 
-    <script>
+    <script type="module">
+        import { API_BASE_URL } from './config.js';
+
         async function register() {
             const userName = document.getElementById('registerUserName').value;
             const matricula = document.getElementById('registerMatricula').value;
             const password = document.getElementById('registerPassword').value;
 
-            const res = await fetch('http://127.0.0.1:5000/user/create', {
+            const res = await fetch('${API_BASE_URL}/user/create', {
                 method: 'POST',
                 headers: {'Content-Type': 'application/json'},
                 body: JSON.stringify({ userName, matricula, password })

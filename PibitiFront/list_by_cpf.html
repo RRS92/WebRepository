@@ -99,7 +99,9 @@
         </div>
     </div>
 
-<script>
+<script type="module">
+    import { API_BASE_URL } from './config.js';
+
     function mascararCPF(cpf) {
         if (!cpf || cpf.length < 5) return cpf;
         const inicio = cpf.slice(0, 3);
@@ -131,7 +133,7 @@
             return;
         }
 
-        const res = await fetch(`http://127.0.0.1:5000/paciente/${cpf}`);
+        const res = await fetch(`${API_BASE_URL}/paciente/${cpf}`);
         const table = document.getElementById('resultTable');
         const tbody = table.querySelector('tbody');
         tbody.innerHTML = '';
@@ -171,7 +173,7 @@
     async function deletarPaciente(cpf) {
     if (!confirm('Confirma a exclusão deste paciente?')) return;
 
-    const res = await fetch(`http://127.0.0.1:5000/paciente/delete/${cpf}`, {
+    const res = await fetch(`${API_BASE_URL}/paciente/delete/${cpf}`, {
         method: 'DELETE'
     });
     if (res.ok) {
