@@ -46,12 +46,22 @@
         <input type="radio" name="febril" value="1" /> Não
     </label>
 
-    <button onclick="addPatient()">Enviar</button>
-    <button class="btn-voltar" onclick="window.location.href='home.html'">Voltar</button>
+    <button id="btnEnviar">Enviar</button>
+    <button class="btn-voltar" id="btnVoltar">Voltar</button>
 </div>
 
 <script type="module">
     import { API_BASE_URL } from './config.js';
+
+    // Helper para todos os fetches com ngrok header
+    async function apiFetch(url, options = {}) {
+        options.headers = {
+            'Content-Type': 'application/json',
+            'ngrok-skip-browser-warning': 'true',
+            ...(options.headers || {})
+        };
+        return fetch(`${API_BASE_URL}${url}`, options);
+    }
 
     function validarAviso(valor, min, max, nomeCampo) {
         if (valor < min || valor > max) {
@@ -59,7 +69,7 @@
         }
     }
 
-    // Vincula evento blur a cada input
+    // Eventos blur para validação
     document.getElementById('pre_hematocrit').addEventListener('blur', (e) => {
         validarAviso(parseFloat(e.target.value), 36, 50, 'Hematócrito');
     });
@@ -92,9 +102,8 @@
         const female = parseInt(femaleRadio.value);
         const normothermia = parseInt(normothermiaRadio.value);
 
-        const res = await fetch(`${API_BASE_URL}/paciente`, {
+        const res = await apiFetch('/paciente', {
             method: 'POST',
-            headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({ 
                 nome, cpf, pre_hematocrit, pre_hemoglobin, pre_lactate, 
                 height, cpb, anoxia, redo, female, age, normothermia 
@@ -109,6 +118,13 @@
             alert('Erro ao criar paciente: ' + (json.message || 'Erro desconhecido'));
         }
     }
+
+    // Eventos para os botões
+    document.getElementById('btnEnviar').addEventListener('click', addPatient);
+    document.getElementById('btnVoltar').addEventListener('click', () => {
+        window.location.href = 'home.html';
+    });
+
 </script>
 </body>
 </html>

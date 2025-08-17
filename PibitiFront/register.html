@@ -11,21 +11,36 @@
         <input type="text" id="registerUserName" placeholder="Usuário">
         <input type="text" id="registerMatricula" placeholder="Matrícula">
         <input type="password" id="registerPassword" placeholder="Senha">
-        <button onclick="register()">Cadastrar</button>
+        <button id="btnRegister">Cadastrar</button>
         <p>Já tem conta? <a href="login.html">Entrar</a></p>
     </div>
 
-    <script type="module">
-        import { API_BASE_URL } from './config.js';
+<script type="module">
+    import { API_BASE_URL } from './config.js';
 
-        async function register() {
-            const userName = document.getElementById('registerUserName').value;
-            const matricula = document.getElementById('registerMatricula').value;
-            const password = document.getElementById('registerPassword').value;
+    // Helper para incluir header ngrok em todos os fetches
+    async function apiFetch(url, options = {}) {
+        options.headers = {
+            'Content-Type': 'application/json',
+            'ngrok-skip-browser-warning': 'true',
+            ...(options.headers || {})
+        };
+        return fetch(`${API_BASE_URL}${url}`, options);
+    }
 
-            const res = await fetch(`${API_BASE_URL}/user/create`, {
+    async function register() {
+        const userName = document.getElementById('registerUserName').value.trim();
+        const matricula = document.getElementById('registerMatricula').value.trim();
+        const password = document.getElementById('registerPassword').value;
+
+        if (!userName || !matricula || !password) {
+            alert('Por favor, preencha todos os campos');
+            return;
+        }
+
+        try {
+            const res = await apiFetch('/user/create', {
                 method: 'POST',
-                headers: {'Content-Type': 'application/json'},
                 body: JSON.stringify({ userName, matricula, password })
             });
 
@@ -33,9 +48,16 @@
                 alert('Cadastro realizado com sucesso!');
                 window.location.href = 'login.html';
             } else {
-                alert('Erro ao cadastrar!');
+                const json = await res.json();
+                alert('Erro ao cadastrar: ' + (json.message || 'Erro desconhecido'));
             }
+        } catch (err) {
+            alert('Erro ao cadastrar: ' + err.message);
         }
-    </script>
+    }
+
+    document.getElementById('btnRegister').addEventListener('click', register);
+</script>
+
 </body>
 </html>
