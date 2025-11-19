@@ -2,8 +2,6 @@
 
 Reposotorio das aulas de WEB - Links para os sites:
 
-Portfolio: https://rrs92.github.io/WebRepository/portfolio/index.html
-
 Fakeflix: https://rrs92.github.io/WebRepository/MyFakeFlix/Home.html
 
 Dalvolitta: https://rrs92.github.io/WebRepository/Dalvolitta/home.html
@@ -15,3 +13,5 @@ Gerador de Citações Inspiradoras: https://rrs92.github.io/WebRepository/atv1/i
 Atividade Tailwind: https://rrs92.github.io/WebRepository/Tailwind/index.html
 
 PBITI: https://rrs92.github.io/WebRepository/PibitiFront/login.html
+
+portfolio: https://rrs92.github.io/WebRepository/portfolio/index.html
